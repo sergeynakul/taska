@@ -1,0 +1,14 @@
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Timezone</th>
+    <th>The overall accuracy (% correct)</th>
+    <th>The accuracy (% correct) within the specified date range</th>
+  </tr>
+  <tr>
+    <td><%= @user.name %></td>
+    <td><%= @user.timezone %></td>
+    <td><%= @user.overall_accuracy %></td>
+    <td><%= @user.range_accuracy(@from, @to) %></td>
+  </tr>
+</table>

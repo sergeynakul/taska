@@ -1,0 +1,18 @@
+<%= form_with url: search_period_accuracy_output_path, method: :get, local: true do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :name %>
+  </p>
+
+  <p>
+    <%= f.label :from %>
+    <%= f.date_field :from, id: :from %>
+  </p>
+
+  <p>
+    <%= f.label :to %>
+    <%= f.date_field :to, id: :to %>
+  </p>
+
+  <%= f.submit "Search" %>
+<% end %>

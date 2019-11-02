@@ -19,12 +19,10 @@ namespace :data do
                   'Europe/Moscow', 'Europe/Paris', 'Europe/Prague', 'Europe/Riga', 'Europe/Rome', 'Europe/Sarajevo', 'Europe/Skopje', 'Europe/Sofia',
                   'Europe/Stockholm', 'Europe/Tallinn', 'Europe/Vienna', 'Europe/Vilnius', 'Europe/Warsaw', 'Europe/Zagreb'] + TimeZone.us_zones.map(&:name)
 
-    time_rand = Time.at((Time.now - 6.month) + rand * (Time.now.to_f - (Time.now - 6.month).to_f))
-
     10.times { User.create!(name: Faker::Name.name, timezone: time_zones.sample) }
 
     User.all.each do |user|
-      10.times { Answer.create!(user_id: user.id, correct: Faker::Boolean.boolean, created_at: time_rand) }
+      10.times { Answer.create!(user_id: user.id, correct: Faker::Boolean.boolean, created_at: Time.at((Time.now - 6.month) + rand * (Time.now.to_f - (Time.now - 6.month).to_f))) }
     end
 
     # INSERT ABOVE

@@ -1,10 +1,20 @@
-<%= form_with url: search_weekly_rankings_output_path, method: :get, local: true do |f| %>
-  <div class="form-group">
-    <p>
-      <%= f.label :start_date %>
-      <%= f.date_field :start_date, id: :start_date, class: 'form-control' %>
-    </p>
+<div class="col col-md-5">
+  <h2>Weekly Rankings</h2>
 
-    <%= f.submit "Search", class: 'btn btn-primary' %>
+  <div class="card border-primary">
+    <div class="card-body">
+      <%= form_with url: search_weekly_rankings_output_path, method: :get, local: true do |f| %>
+        <div class="form-group">
+          <p>Note: Week starts on a Monday and ends on Sunday</p>
+
+          <p>
+            <%= f.label :start_date %>
+            <%= f.date_field :start_date, id: :start_date, class: 'form-control' %>
+          </p>
+
+          <%= f.submit "Submit", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

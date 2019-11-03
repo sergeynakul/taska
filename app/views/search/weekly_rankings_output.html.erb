@@ -1,14 +1,16 @@
-<table class="table">
-  <tr>
-    <th>Username</th>
-    <th>Rank this week</th>
-    <th>Change from previous week</th>
-  </tr>
-  <% @users.each do |user| %>
+<div class="col">
+  <table class="table">
     <tr>
-      <td><%= user.name %></td>
-      <td><%= user.weekly_rankings(user, @start_date) %></td>
-      <td><%= user.change_rankings(user, @start_date) %></td>
+      <th>Username</th>
+      <th>Rank this week</th>
+      <th>Change from previous week</th>
     </tr>
-    <% end %>
-</table>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.weekly_rankings(user, @start_date) %></td>
+        <td><%= user.change_rankings(user, @start_date) %></td>
+      </tr>
+      <% end %>
+  </table>
+</div>

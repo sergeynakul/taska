@@ -1,20 +1,30 @@
-<%= form_with url: search_period_accuracy_output_path, method: :get, local: true do |f| %>
-  <div class="form-group">
-    <p>
-      <%= f.label :name %>
-      <%= f.text_field :name, id: :name, class: 'form-control' %>
-    </p>
+<div class="col col-md-4">
+  <h2>Period Accuracy</h2>
 
-    <p>
-      <%= f.label :from %>
-      <%= f.date_field :from, id: :from, class: 'form-control' %>
-    </p>
+  <div class="card border-primary">
+    <div class="card-body">
+      <%= form_with url: search_period_accuracy_output_path, method: :get, local: true do |f| %>
+        <div class="form-group">
+          <p>
+            <%= f.label :name, 'Username' %>
+            <%= f.text_field :name, id: :name, class: 'form-control' %>
+          </p>
 
-    <p>
-      <%= f.label :to %>
-      <%= f.date_field :to, id: :to, class: 'form-control' %>
-    </p>
+          <p>Date Range</p>
 
-    <%= f.submit "Search", class: 'btn btn-primary' %>
+          <p>
+            <%= f.label :from %>
+            <%= f.date_field :from, id: :from, class: 'form-control' %>
+          </p>
+
+          <p>
+            <%= f.label :to %>
+            <%= f.date_field :to, id: :to, class: 'form-control' %>
+          </p>
+
+          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

@@ -1,2 +1,14 @@
-<h1>Search#weekly_rankings_output</h1>
-<p>Find me in app/views/search/weekly_rankings_output.html.erb</p>
+<table class="table">
+  <tr>
+    <th>Username</th>
+    <th>Rank this week</th>
+    <th>Change from previous week</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.weekly_rankings(user, @start_date) %></td>
+      <td><%= user.change_rankings(user, @start_date) %></td>
+    </tr>
+    <% end %>
+</table>

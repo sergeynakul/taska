@@ -9,5 +9,8 @@ class SearchController < ApplicationController
     @to = params[:to]
   end
 
-  def weekly_rankings_output; end
+  def weekly_rankings_output
+    @start_date = params[:start_date]
+    @users = User.weekly_rankings(@start_date)
+  end
 end

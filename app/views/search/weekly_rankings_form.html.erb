@@ -1,2 +1,10 @@
-<h1>Search#weekly_rankings_form</h1>
-<p>Find me in app/views/search/weekly_rankings_form.html.erb</p>
+<%= form_with url: search_weekly_rankings_output_path, method: :get, local: true do |f| %>
+  <div class="form-group">
+    <p>
+      <%= f.label :start_date %>
+      <%= f.date_field :start_date, id: :start_date, class: 'form-control' %>
+    </p>
+
+    <%= f.submit "Search", class: 'btn btn-primary' %>
+  </div>
+<% end %>
